@@ -1,0 +1,18 @@
+<header class="site-header" aria-label="Primary">
+  <div class="site-header__inner">
+    <a class="site-header__brand" href="/">
+      <span class="site-header__mark" aria-hidden="true">🍟</span>
+      <span class="site-header__text">
+        <strong>{{ store.name }}</strong>
+        <small>{{ store.tagline }}</small>
+      </span>
+    </a>
+    <nav class="site-header__nav" aria-label="Site">
+      <a href="#menu" class="site-header__link">Menu</a>
+      <a href="#services" class="site-header__link">Services</a>
+      <a href="#reviews" class="site-header__link">Reviews</a>
+      <a href="#visit" class="site-header__link">Visit</a>
+    </nav>
+    <a class="btn site-header__cta" href="tel:{{ store.phone | tel }}">Call to Order</a>
+  </div>
+</header>

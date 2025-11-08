@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    {% include "head-seo.njk" %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    {% include "nav.njk" %}
+    <main id="main-content">
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+    <script type="module" src="/@/scripts/main.ts"></script>
+  </body>
+</html>

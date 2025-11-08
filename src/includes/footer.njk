@@ -1,0 +1,31 @@
+<footer class="site-footer" id="visit">
+  <div class="site-footer__grid">
+    <div>
+      <h2 class="site-footer__heading">Come say hi</h2>
+      <p>{{ store.address.street }}, {{ store.address.city }}, {{ store.address.province }} {{ store.address.postalCode }}</p>
+      <p>
+        <a class="site-footer__link" href="tel:{{ store.phone | tel }}">{{ store.phone }}</a>
+      </p>
+      <a class="btn" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">Open in Maps</a>
+    </div>
+    <div>
+      <h3 class="site-footer__subheading">Store Hours</h3>
+      <dl class="hours-table">
+        {% for entry in store.hours %}
+        <div class="hours-table__row" data-day="{{ entry.day }}">
+          <dt>{{ entry.day }}</dt>
+          <dd>{{ entry.open }} – {{ entry.close }}</dd>
+        </div>
+        {% endfor %}
+      </dl>
+    </div>
+    <div>
+      <h3 class="site-footer__subheading">Follow us</h3>
+      <div class="site-footer__social">
+        <a href="{{ store.social.facebook }}" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
+        <a href="{{ store.social.instagram }}" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+  <p class="site-footer__legal">© {{ currentYear }} {{ store.legalName }}. Built for the Masonville community.</p>
+</footer>

@@ -1,0 +1,130 @@
+---
+layout: base.njk
+title: Masonville Corner Store
+description: Fresh-cut fries, poutine, fuel, and friendly neighbourhood service at Masonville Corner Store in Shelburne, Ontario.
+---
+
+<section class="hero" id="hero">
+  <div class="hero__content">
+    <span class="pill">Fresh-cut fries served daily</span>
+    <h1 class="hero__headline">Neighbourly convenience with crave-worthy fries &amp; poutine</h1>
+    <p class="hero__copy">Fuel up, grab a hot meal, and pick up the essentials all in one stop. Masonville Corner Store is a family-run hub keeping Shelburne energized with locally loved eats and friendly smiles.</p>
+    <div class="hero__ctas">
+      <a class="btn" href="tel:{{ store.cta.orderPhone | tel }}">{{ store.cta.orderLabel }}</a>
+      <a class="btn btn--ghost" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">{{ store.cta.directionsLabel }}</a>
+    </div>
+  </div>
+  <div class="hero__media">
+    {% image "store_front.jpg", "Exterior of Masonville Corner Store with gas pumps at dusk", "(min-width: 960px) 600px, 100vw" %}
+  </div>
+</section>
+
+<section class="section highlights" id="menu">
+  <header class="section__header">
+    <span class="pill">Hot eats</span>
+    <h2>Order the classics that made us famous</h2>
+    <p>Potatoes cut fresh each morning, squeaky cheese curds, and hearty hometown portions.</p>
+  </header>
+  <div class="highlights__grid">
+    {% for item in menu.featured %}
+    <article class="highlight-card">
+      <div class="highlight-card__media">
+        {% image item.image, item.name, "(min-width: 960px) 320px, 100vw" %}
+      </div>
+      <div class="highlight-card__body">
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <ul class="highlights__list" aria-label="Menu staples">
+    {% for staple in menu.staples %}
+    <li>{{ staple }}</li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section services" id="services">
+  <header class="section__header">
+    <span class="pill">Everything you need</span>
+    <h2>More than a corner store</h2>
+    <p>Pop in for a meal, stock up on pantry staples, and top up the tank before you hit the road.</p>
+  </header>
+  <div class="grid grid--cols-3 services__grid">
+    <article class="service-card">
+      <h3>Fuel &amp; Propane</h3>
+      <p>Full-service gas, diesel, and propane fills with quick, friendly attendants.</p>
+    </article>
+    <article class="service-card">
+      <h3>Hot Meals</h3>
+      <p>From breakfast sandwiches to peameal on a bun, grab something satisfying any time of day.</p>
+    </article>
+    <article class="service-card">
+      <h3>Groceries &amp; Snacks</h3>
+      <p>Local baked goods, dairy, fresh produce, and the drinks that keep your cooler stocked.</p>
+    </article>
+    <article class="service-card">
+      <h3>Community Essentials</h3>
+      <p>Lotto, packaged ice, firewood, and last-minute household must-haves.</p>
+    </article>
+    <article class="service-card">
+      <h3>Chip Truck Memories</h3>
+      <p>Enjoy the flavours of our on-site chip truck all year long from the comfort of the store.</p>
+    </article>
+    <article class="service-card">
+      <h3>Road Trip Ready</h3>
+      <p>Clean restrooms, steaming coffee, and car-ready snacks make refuelling effortless.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section story" id="story">
+  <div class="story__inner">
+    <div class="story__copy">
+      <span class="pill">Our story</span>
+      <h2>Local roots. Loyal neighbours. Legendary fries.</h2>
+      <p>What started as a small-town general store grew into a community gathering spot where regulars are greeted by name. We source Ontario potatoes, simmer gravy from scratch, and champion local producers so every visit tastes like home.</p>
+      <p>Whether you're a local stopping by for lunch or a traveller fueling up for the road ahead, we treat everyone like family. Our chip truck traditions live on year-round, serving up the crispy, golden fries that keep people coming back generation after generation.</p>
+      <ul class="story__highlights">
+        {% for highlight in store.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="story__media">
+      {% image "foodstand-4.jpg", "Red food stand with OPEN sign at Masonville Corner Store", "(min-width: 960px) 540px, 100vw" %}
+    </div>
+  </div>
+</section>
+
+<section class="section reviews" id="reviews">
+  <header class="section__header">
+    <span class="pill">Neighbour approved</span>
+    <h2>See why the community keeps coming back</h2>
+  </header>
+  <div class="reviews__grid">
+    {% from "review-card.njk" import reviewCard %}
+    {% for review in reviews.featured %}
+      {{ reviewCard(review) }}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section visit" aria-labelledby="visit-heading">
+  <div class="visit__grid">
+    <div>
+      <span class="pill">Plan your visit</span>
+      <h2 id="visit-heading">Drop by for fries or fuel</h2>
+      <p>Find us just off Dufferin County Road 124 with plenty of parking for trucks, trailers, and family road trips. Swing through for hot food, friendly chats, and everything you need for the drive ahead.</p>
+      <div class="visit__cta">
+        <a class="btn" href="tel:{{ store.cta.orderPhone | tel }}">Call {{ store.phone }}</a>
+        <a class="btn btn--ghost" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">Directions</a>
+      </div>
+    </div>
+    <div class="visit__map">
+      <iframe title="Map showing Masonville Corner Store" src="https://www.google.com/maps?&amp;q={{ store.address.street | urlencode }}+{{ store.address.city | urlencode }}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="visit__disclaimer">Interactive map provided via Google Maps embed. Replace with authenticated embed if required.</p>
+    </div>
+  </div>
+</section>

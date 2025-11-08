@@ -1,0 +1,8 @@
+{% macro reviewCard(review) -%}
+<article class="review-card" aria-label="Customer review from {{ review.author }}">
+  <div class="review-card__rating" aria-hidden="true">{{ review.rating | stars }}</div>
+  <p class="review-card__excerpt">“{{ review.excerpt }}”</p>
+  <p class="review-card__author">— {{ review.author }} · {{ review.source }}</p>
+  <a class="review-card__link" href="{{ review.url }}" target="_blank" rel="noopener">Read on {{ review.source }}</a>
+</article>
+{%- endmacro %}

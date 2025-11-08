@@ -1,0 +1,16 @@
+{
+  "name": "Masonville Corner Store",
+  "short_name": "Masonville",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff9f1",
+  "theme_color": "#1f1f1f",
+  "description": "Fresh-cut fries, poutine, and neighbourhood essentials from Masonville Corner Store in Shelburne, Ontario.",
+  "icons": [
+    {
+      "src": "/assets/images/store_front.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

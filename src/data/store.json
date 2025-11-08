@@ -1,0 +1,49 @@
+{
+  "name": "Masonville Corner Store",
+  "legalName": "Masonville Corner Store",
+  "siteUrl": "https://masonvillecorner.store",
+  "tagline": "Family-owned convenience, fresh-cut fries, and friendly service.",
+  "description": "Masonville Corner Store is a family-run convenience hub in Shelburne, Ontario offering hot meals, fresh-cut fries, poutine, fuel, and everyday essentials for neighbours on the go.",
+  "phone": "+1 519-925-0522",
+  "email": "hello@masonvillecorner.store",
+  "address": {
+    "street": "517003 Dufferin County Rd 124",
+    "city": "Shelburne",
+    "province": "ON",
+    "postalCode": "L0N 1S7",
+    "country": "Canada",
+    "geo": {
+      "latitude": 44.2053,
+      "longitude": -80.2045
+    }
+  },
+  "hours": [
+    { "day": "Monday", "open": "06:00", "close": "20:00" },
+    { "day": "Tuesday", "open": "06:00", "close": "20:00" },
+    { "day": "Wednesday", "open": "06:00", "close": "20:00" },
+    { "day": "Thursday", "open": "06:00", "close": "20:00" },
+    { "day": "Friday", "open": "06:00", "close": "20:00" },
+    { "day": "Saturday", "open": "08:00", "close": "19:00" },
+    { "day": "Sunday", "open": "08:00", "close": "19:00" }
+  ],
+  "directionsUrl": "https://maps.google.com/?q=517003+Dufferin+County+Rd+124,+Shelburne,+ON+L0N+1S7",
+  "reviews": {
+    "rating": 4.1,
+    "count": 97,
+    "source": "Google"
+  },
+  "highlights": [
+    "Fresh-cut fries and hearty poutine made to order",
+    "Full-service gas station with diesel and propane",
+    "Locally sourced snacks, groceries, and take-home meals"
+  ],
+  "cta": {
+    "orderPhone": "+1 519-925-0522",
+    "orderLabel": "Order Fries",
+    "directionsLabel": "Get Directions"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/pages/Masonville-Corner-Store/1776347799266016/",
+    "instagram": "https://www.instagram.com/explore/locations/1776347799266016/masonville-corner-store/"
+  }
+}

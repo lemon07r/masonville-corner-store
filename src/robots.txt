@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://masonvillecorner.store/sitemap.xml

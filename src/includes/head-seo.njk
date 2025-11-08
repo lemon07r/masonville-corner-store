@@ -1,0 +1,75 @@
+{% set canonicalBase = store.siteUrl %}
+{% set canonical = canonicalBase + '/' %}
+{% if page.url and page.url != '/' %}
+  {% set canonical = canonicalBase + page.url %}
+{% endif %}
+{% if title %}
+  {% set metaTitle = title + ' | ' + store.name %}
+{% else %}
+  {% set metaTitle = store.name + ' | ' + store.tagline %}
+{% endif %}
+
+{% if description %}
+  {% set metaDescription = description %}
+{% else %}
+  {% set metaDescription = store.description %}
+{% endif %}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ metaTitle }}</title>
+<meta name="description" content="{{ metaDescription }}">
+<link rel="canonical" href="{{ canonical }}">
+<link rel="manifest" href="/manifest.webmanifest" data-vite-ignore>
+<meta name="theme-color" content="#1f1f1f">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:site_name" content="{{ store.name }}">
+<meta property="og:title" content="{{ metaTitle }}">
+<meta property="og:description" content="{{ metaDescription }}">
+<meta property="og:image" content="{{ canonicalBase }}/assets/images/store_front.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ metaTitle }}">
+<meta name="twitter:description" content="{{ metaDescription }}">
+<meta name="twitter:image" content="{{ canonicalBase }}/assets/images/store_front.jpg">
+
+<link rel="preload" as="image" href="/assets/images/store_front.jpg" imagesrcset="/assets/images/store_front.jpg 1200w">
+
+{% include "critical-css.njk" %}
+
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@type": "ConvenienceStore",
+  "name": store.name,
+  "image": [
+    canonicalBase + "/assets/images/store_front.jpg",
+    canonicalBase + "/assets/images/freshcut_fries_sign.jpg"
+  ],
+  "url": canonicalBase,
+  "telephone": store.phone,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": store.address.street,
+    "addressLocality": store.address.city,
+    "addressRegion": store.address.province,
+    "postalCode": store.address.postalCode,
+    "addressCountry": store.address.country
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": store.address.geo.latitude,
+    "longitude": store.address.geo.longitude
+  },
+  "openingHoursSpecification": store.hours | toOpeningHoursSpecification,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": store.reviews.rating,
+    "reviewCount": store.reviews.count
+  },
+  "review": reviews.featured | default([]) | toStructuredReviews
+} | dump(2) | safe }}
+</script>

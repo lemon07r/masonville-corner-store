@@ -1,0 +1,25 @@
+{
+  "featured": [
+    {
+      "author": "Elizabeth Bryan",
+      "rating": 5,
+      "excerpt": "Full service station, friendly owners and staff, and a convenient location.",
+      "source": "Google",
+      "url": "https://www.google.com/maps/place/Masonville+Corner+Store"
+    },
+    {
+      "author": "Randy Kirk",
+      "rating": 5,
+      "excerpt": "Great place to gas up – the peameal on a bun and fries are fantastic, and the people are lovely.",
+      "source": "Google",
+      "url": "https://www.google.com/maps/place/Masonville+Corner+Store"
+    },
+    {
+      "author": "Sammy Spataro",
+      "rating": 5,
+      "excerpt": "Great food and service.",
+      "source": "Google",
+      "url": "https://www.google.com/maps/place/Masonville+Corner+Store"
+    }
+  ]
+}

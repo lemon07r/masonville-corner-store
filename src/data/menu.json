@@ -1,0 +1,28 @@
+{
+  "featured": [
+    {
+      "name": "Fresh-Cut Fries",
+      "description": "Crisp outside, fluffy inside fries made from Ontario potatoes, served with house seasoning.",
+      "price": "5.50",
+      "image": "freshcut_fries_sign.jpg"
+    },
+    {
+      "name": "Classic Poutine",
+      "description": "Golden fries loaded with squeaky cheese curds and rich brown gravy.",
+      "price": "9.75",
+      "image": "poutine.jpg"
+    },
+    {
+      "name": "Peameal Bacon on a Bun",
+      "description": "Signature sandwich piled high with Ontario peameal bacon and maple mustard.",
+      "price": "8.25",
+      "image": "foodstand-3.jpg"
+    }
+  ],
+  "staples": [
+    "Daily hot specials",
+    "Breakfast sandwiches",
+    "Fresh coffee & tea",
+    "Local baked goods"
+  ]
+}
