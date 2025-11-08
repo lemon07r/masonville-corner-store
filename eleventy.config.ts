@@ -59,7 +59,7 @@ export default function (eleventyConfig: UserConfig) {
       },
       build: {
         manifest: true,
-        emptyOutDir: true,
+        emptyOutDir: false,
       },
     },
   });
@@ -68,9 +68,9 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
-  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addPassthroughCopy("src/manifest.webmanifest");
-  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy({ "assets": "assets" });
+  eleventyConfig.addPassthroughCopy("manifest.webmanifest");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addWatchTarget("src/styles");
   eleventyConfig.addWatchTarget("src/scripts");
 

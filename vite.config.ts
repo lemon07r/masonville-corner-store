@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     manifest: true,
-    emptyOutDir: true,
+    emptyOutDir: false,
     rollupOptions: {
       output: {
         assetFileNames: ({ name }) => {
