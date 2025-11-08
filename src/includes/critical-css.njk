@@ -4,8 +4,8 @@
   --color-bg: #fff9f1;
   --color-surface: #ffffff;
   --color-text: #1f1f1f;
-  --color-accent: #d68b0e;
-  --color-accent-dark: #b5750a;
+  --color-accent: #e89b1a;
+  --color-accent-dark: #b8770c;
   --color-forest: #2f6f59;
   --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -47,15 +47,17 @@ main {
   padding: 0.85rem 1.5rem;
   border-radius: 999px;
   font-weight: 600;
-  background: var(--color-accent);
+  background: var(--color-accent-dark);
   color: #fff;
   transition: transform 150ms ease, background 150ms ease;
+  box-shadow: 0 2px 8px rgba(184, 119, 12, 0.25);
 }
 
 .btn:hover,
 .btn:focus-visible {
-  background: var(--color-accent-dark);
+  background: #a06708;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184, 119, 12, 0.35);
 }
 
 .hero {
