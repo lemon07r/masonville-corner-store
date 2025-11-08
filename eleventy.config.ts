@@ -6,7 +6,13 @@ import EleventyPluginBundle from "@11ty/eleventy-plugin-bundle";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 
-async function imageShortcode(src: string, alt: string, sizes = "100vw") {
+async function imageShortcode(
+  src: string,
+  alt: string,
+  sizes = "100vw",
+  loading: "lazy" | "eager" = "lazy",
+  fetchpriority?: "high" | "low" | "auto"
+) {
   if (!alt) {
     throw new Error(`Image shortcode for ${src} requires an alt attribute.`);
   }
@@ -14,7 +20,7 @@ async function imageShortcode(src: string, alt: string, sizes = "100vw") {
   const resolvedSrc = path.join("src/assets/images", src);
 
   const metadata = await Image(resolvedSrc, {
-    widths: [400, 800, 1200],
+    widths: [400, 600, 800, 1200],
     formats: ["avif", "webp", "jpeg"],
     outputDir: "dist/assets",
     urlPath: "/assets/",
@@ -23,12 +29,16 @@ async function imageShortcode(src: string, alt: string, sizes = "100vw") {
     },
   });
 
-  const imageAttributes = {
+  const imageAttributes: Record<string, string> = {
     alt,
     sizes,
-    loading: "lazy",
+    loading,
     decoding: "async",
   };
+
+  if (fetchpriority) {
+    imageAttributes.fetchpriority = fetchpriority;
+  }
 
   return Image.generateHTML(metadata, imageAttributes, {
     whitespaceMode: "inline",
