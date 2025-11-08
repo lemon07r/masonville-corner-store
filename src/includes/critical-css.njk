@@ -5,7 +5,7 @@
   --color-surface: #ffffff;
   --color-text: #1f1f1f;
   --color-accent: #e89b1a;
-  --color-accent-dark: #b8770c;
+  --color-accent-dark: #8d5a08;
   --color-forest: #2f6f59;
   --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -33,6 +33,22 @@ a {
   text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.25rem;
+}
+
 header,
 main {
   max-width: min(1200px, 90vw);
@@ -55,9 +71,9 @@ main {
 
 .btn:hover,
 .btn:focus-visible {
-  background: #a06708;
+  background: #6d4406;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(184, 119, 12, 0.35);
+  box-shadow: 0 4px 12px rgba(141, 90, 8, 0.35);
 }
 
 .hero {
@@ -72,6 +88,27 @@ main {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   margin-bottom: 1rem;
   line-height: 1.05;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.hero__copy {
+  max-width: 36ch;
+  margin-bottom: 2rem;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.hero__media picture,
+.hero__media img {
+  width: 100%;
+  border-radius: 1.75rem;
+  box-shadow: 0 30px 70px -45px rgba(31, 31, 31, 0.6);
 }
 
 .pill {
