@@ -6,9 +6,6 @@ import EleventyPluginBundle from "@11ty/eleventy-plugin-bundle";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 
-const IMAGE_CACHE_DIR = ".cache/@11ty/img";
-const IMAGE_BUILD_DIR = "img/built";
-
 async function imageShortcode(src: string, alt: string, sizes = "100vw") {
   if (!alt) {
     throw new Error(`Image shortcode for ${src} requires an alt attribute.`);
@@ -19,8 +16,8 @@ async function imageShortcode(src: string, alt: string, sizes = "100vw") {
   const metadata = await Image(resolvedSrc, {
     widths: [400, 800, 1200],
     formats: ["avif", "webp", "jpeg"],
-    outputDir: IMAGE_CACHE_DIR,
-    urlPath: `/${IMAGE_BUILD_DIR}/`,
+    outputDir: "dist/assets",
+    urlPath: "/assets/",
     sharpOptions: {
       animated: false,
     },
@@ -74,7 +71,6 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy("src/manifest.webmanifest");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy({ [IMAGE_CACHE_DIR]: IMAGE_BUILD_DIR });
   eleventyConfig.addWatchTarget("src/styles");
   eleventyConfig.addWatchTarget("src/scripts");
 
