@@ -15,7 +15,7 @@ description: Fresh-cut fries, poutine, fuel, and friendly neighbourhood service 
     </div>
   </div>
   <div class="hero__media">
-    {% image "store_front.jpg", "Exterior of Masonville Corner Store with gas pumps at dusk", "(min-width: 1200px) 540px, (min-width: 960px) 600px, 90vw", "eager", "high" %}
+    {% image "store_front.jpg", "Exterior of Masonville Corner Store with gas pumps at dusk", "(min-width: 960px) 540px, 90vw", "eager", "high" %}
   </div>
 </section>
 
@@ -29,7 +29,7 @@ description: Fresh-cut fries, poutine, fuel, and friendly neighbourhood service 
     {% for item in menu.featured %}
     <article class="highlight-card">
       <div class="highlight-card__media">
-        {% image item.image, item.name, "(min-width: 1200px) 360px, (min-width: 960px) 380px, (min-width: 720px) 30vw, 90vw" %}
+        {% image item.image, item.name, "(min-width: 720px) 360px, 90vw" %}
       </div>
       <div class="highlight-card__body">
         <h3>{{ item.name }}</h3>
@@ -93,7 +93,7 @@ description: Fresh-cut fries, poutine, fuel, and friendly neighbourhood service 
       </ul>
     </div>
     <div class="story__media">
-      {% image "foodstand-4.jpg", "Red food stand with OPEN sign at Masonville Corner Store", "(min-width: 1200px) 540px, (min-width: 960px) 50vw, 90vw" %}
+      {% image "foodstand-4.jpg", "Red food stand with OPEN sign at Masonville Corner Store", "(min-width: 960px) 540px, 90vw" %}
     </div>
   </div>
 </section>
