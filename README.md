@@ -270,6 +270,5 @@ Shelburne, ON L0N 1S7
 Canada
 
 Phone: +1 519-925-0522
-Email: hello@masonvillecorner.store
 
 Website: [https://masonvillecorner.store](https://masonvillecorner.store)
