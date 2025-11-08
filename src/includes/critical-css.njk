@@ -4,10 +4,16 @@
   --color-bg: #fff9f1;
   --color-surface: #ffffff;
   --color-text: #1f1f1f;
-  --color-accent: #f5a623;
-  --color-accent-dark: #c97f0a;
+  --color-accent: #d68b0e;
+  --color-accent-dark: #b5750a;
   --color-forest: #2f6f59;
-  --font-base: "Archivo", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }
 
 * {
