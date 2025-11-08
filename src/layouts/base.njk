@@ -3,6 +3,8 @@
   <head>
     {% include "head-seo.njk" %}
     <link rel="preload" href="/@/scripts/main.ts" as="script" crossorigin>
+    <link rel="stylesheet" href="/@/styles/main.css" media="print" onload="this.media='all';this.onload=null;">
+    <noscript><link rel="stylesheet" href="/@/styles/main.css"></noscript>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

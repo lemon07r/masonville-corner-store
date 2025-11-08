@@ -145,6 +145,31 @@ main {
   gap: 1.5rem;
 }
 
+.btn--ghost {
+  background: rgba(47, 111, 89, 0.1);
+  color: var(--color-forest);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background: rgba(47, 111, 89, 0.2);
+}
+
+.section__header {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.highlight-card {
+  display: grid;
+  gap: 1.25rem;
+  background: var(--color-surface);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 60px -44px rgba(31, 31, 31, 0.45);
+}
+
 @media (min-width: 768px) {
   .grid--cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
