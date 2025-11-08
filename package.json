@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production eleventy",
+    "build": "cross-env NODE_ENV=production ELEVENTY_ENV=production eleventy && cp src/robots.txt dist/robots.txt && cp src/manifest.webmanifest dist/manifest.webmanifest",
     "preview": "serve dist -l 4173",
     "lint:css": "stylelint \"src/styles/**/*.css\"",
     "test": "bunx playwright test",
