@@ -11,7 +11,7 @@ test.describe("Masonville Corner Store landing page", () => {
     expect(description).toContain("Cheapest gas");
 
     const canonical = await page.locator('link[rel="canonical"]').getAttribute("href");
-    expect(canonical).toBe("https://masonvillecorner.store/");
+    expect(canonical).toBe("https://www.masonvillecorner.ca/");
 
     const ldJsonRaw = await page.locator('script[type="application/ld+json"]').first().textContent();
     expect(ldJsonRaw).toBeTruthy();
