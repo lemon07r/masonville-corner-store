@@ -1,4 +1,6 @@
 import path from "node:path";
+import fs from "node:fs";
+import { execSync } from "node:child_process";
 import Image from "@11ty/eleventy-img";
 import EleventyVitePlugin from "@11ty/eleventy-plugin-vite";
 import { EleventyRenderPlugin, type UserConfig } from "@11ty/eleventy";
@@ -48,6 +50,18 @@ async function imageShortcode(
 export default function (eleventyConfig: UserConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
+  // Hook A: Backup sitemap before Vite runs (registered first)
+  eleventyConfig.on("eleventy.after", async ({ dir }) => {
+    const src = path.resolve(dir.output, "sitemap.xml");
+    const backup = path.resolve("sitemap.xml.bak");
+    if (fs.existsSync(src)) {
+      console.log(`[build] Backing up sitemap.xml to ${backup}`);
+      fs.copyFileSync(src, backup);
+    } else {
+      console.log(`[build] Warning: sitemap.xml not found at ${src} for backup.`);
+    }
+  });
+
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(EleventyPluginBundle);
 
@@ -70,6 +84,18 @@ export default function (eleventyConfig: UserConfig) {
       build: {
         manifest: true,
         emptyOutDir: false,
+        rollupOptions: {
+          output: {
+            assetFileNames: ({ name }) => {
+              if (name && name.endsWith(".css")) {
+                return "css/[name]-[hash][extname]";
+              }
+              return "assets/[name]-[hash][extname]";
+            },
+            chunkFileNames: "js/[name]-[hash].js",
+            entryFileNames: "js/[name]-[hash].js",
+          },
+        },
       },
     },
   });
@@ -135,8 +161,6 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
   eleventyConfig.addGlobalData("buildInfo", () => {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      const { execSync } = require("node:child_process");
       const commit = execSync("git rev-parse --short HEAD").toString().trim();
       return {
         commit,
