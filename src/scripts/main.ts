@@ -43,7 +43,7 @@ if (!reduceMotion && "IntersectionObserver" in window) {
   );
 
   document
-    .querySelectorAll<HTMLElement>("section.section")
+    .querySelectorAll<HTMLElement>("section.section, .animate-grid")
     .forEach((section) => observer.observe(section));
 }
 
