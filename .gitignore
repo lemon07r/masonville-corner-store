@@ -40,3 +40,5 @@ playwright/.cache/
 # Temporary files
 *.tmp
 .temp/
+
+GEMINI.md

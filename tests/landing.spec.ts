@@ -8,7 +8,7 @@ test.describe("Masonville Corner Store landing page", () => {
     await expect(page).toHaveTitle(/Masonville Corner Store/);
 
     const description = await page.locator('meta[name="description"]').getAttribute("content");
-    expect(description).toContain("Fresh-cut fries");
+    expect(description).toContain("Cheapest gas");
 
     const canonical = await page.locator('link[rel="canonical"]').getAttribute("href");
     expect(canonical).toBe("https://masonvillecorner.store/");
@@ -16,14 +16,14 @@ test.describe("Masonville Corner Store landing page", () => {
     const ldJsonRaw = await page.locator('script[type="application/ld+json"]').first().textContent();
     expect(ldJsonRaw).toBeTruthy();
     const ldJson = JSON.parse(ldJsonRaw ?? "{}");
-    expect(ldJson["@type"]).toBe("ConvenienceStore");
+    expect(ldJson["@type"]).toBe("GasStation");
     expect(ldJson.aggregateRating.reviewCount).toBeGreaterThan(0);
   });
 
   test("shows primary calls to action", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("link", { name: "Order Fries" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Get Directions" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Check Hours" })).toBeVisible();
+    await expect(page.locator("#hero").getByRole("link", { name: "Get Directions" })).toBeVisible();
   });
 
   test("renders reviews section", async ({ page }) => {

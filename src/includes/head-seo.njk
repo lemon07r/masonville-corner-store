@@ -40,13 +40,16 @@
 <link rel="preconnect" href="https://www.google.com" crossorigin>
 <link rel="preconnect" href="https://maps.google.com" crossorigin>
 <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 
 {% include "critical-css.njk" %}
 
 <script type="application/ld+json">
 {{ {
   "@context": "https://schema.org",
-  "@type": "ConvenienceStore",
+  "@type": "GasStation",
   "name": store.name,
   "image": [
     canonicalBase + "/assets/images/store_front.jpg",
@@ -67,6 +70,8 @@
     "latitude": store.address.geo.latitude,
     "longitude": store.address.geo.longitude
   },
+  "priceRange": "$$",
+  "hasMap": store.directionsUrl,
   "openingHoursSpecification": store.hours | toOpeningHoursSpecification,
   "aggregateRating": {
     "@type": "AggregateRating",

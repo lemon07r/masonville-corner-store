@@ -2,8 +2,8 @@
   "name": "Masonville Corner Store",
   "legalName": "Masonville Corner Store",
   "siteUrl": "https://masonvillecorner.store",
-  "tagline": "Family-owned convenience, fresh-cut fries, and friendly service.",
-  "description": "Masonville Corner Store is a family-run convenience hub in Shelburne, Ontario offering hot meals, fresh-cut fries, poutine, fuel, and everyday essentials for neighbours on the go.",
+  "tagline": "Shelburne's best gas prices and friendly service.",
+  "description": "Stop by Masonville Corner Store for the cheapest gas in Shelburne, diesel, and propane. Friendly service, convenience items, and seasonal fresh-cut fries.",
   "phone": "+1 519-925-0522",
   "email": "hello@masonvillecorner.store",
   "address": {
@@ -33,13 +33,13 @@
     "source": "Google"
   },
   "highlights": [
-    "Fresh-cut fries and hearty poutine made to order",
-    "Full-service gas station with diesel and propane",
-    "Locally sourced snacks, groceries, and take-home meals"
+    "Competitively priced gas, diesel, and propane",
+    "Seasonal fresh-cut fries and poutine",
+    "Locally sourced snacks and everyday essentials"
   ],
   "cta": {
     "orderPhone": "+1 519-925-0522",
-    "orderLabel": "Order Fries",
+    "orderLabel": "Call Store",
     "directionsLabel": "Get Directions"
   },
   "social": {
