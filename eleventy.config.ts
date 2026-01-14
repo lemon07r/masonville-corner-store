@@ -133,6 +133,22 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addFilter("tel", (input: string) => input.replace(/[^+\d]/g, ""));
 
   eleventyConfig.addGlobalData("currentYear", () => new Date().getFullYear());
+  eleventyConfig.addGlobalData("buildInfo", () => {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const { execSync } = require("node:child_process");
+      const commit = execSync("git rev-parse --short HEAD").toString().trim();
+      return {
+        commit,
+        timestamp: new Date().toISOString(),
+      };
+    } catch (e) {
+      return {
+        commit: "unknown",
+        timestamp: new Date().toISOString(),
+      };
+    }
+  });
 
   return {
     dir: {

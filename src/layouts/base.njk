@@ -3,6 +3,7 @@
   <head>
     {% include "head-seo.njk" %}
     <link rel="preload" href="/@/scripts/main.ts" as="script" crossorigin>
+    <meta name="build-info" content="commit={{ buildInfo.commit }}, timestamp={{ buildInfo.timestamp }}">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
