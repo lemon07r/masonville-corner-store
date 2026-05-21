@@ -20,11 +20,10 @@ async function imageShortcode(
   }
 
   const resolvedSrc = path.join("src/assets/images", src);
-  const isPng = src.endsWith(".png");
 
   const metadata = await Image(resolvedSrc, {
     widths: [400, 600, 800, 1200],
-    formats: isPng ? ["avif", "webp", "png"] : ["avif", "webp", "jpeg"],
+    formats: ["avif", "webp", "jpeg"],
     outputDir: "dist/assets",
     urlPath: "/assets/",
     sharpOptions: {

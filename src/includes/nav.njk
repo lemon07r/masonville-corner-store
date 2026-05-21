@@ -1,20 +1,18 @@
 <header class="site-header" aria-label="Primary">
   <div class="site-header__inner">
     <a class="site-header__brand" href="/">
-      {% image "logo-minimal.png", "Astraea Fabrication logo", "120px", "eager", "high" %}
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-accent)"><path d="M3 22h18"/><path d="M4 22V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v18"/><path d="M14 13h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-3"/><rect x="6" y="5" width="6" height="5" rx="1"/></svg>
       <span class="site-header__text">
         <strong>{{ store.name }}</strong>
+        <small>{{ store.tagline }}</small>
       </span>
     </a>
-    <button class="site-header__toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
     <nav class="site-header__nav" aria-label="Site">
-      <a href="#hero" class="site-header__link">Home</a>
+      <a href="#menu" class="site-header__link">Menu</a>
       <a href="#services" class="site-header__link">Services</a>
-      <a href="#work" class="site-header__link">Work</a>
-      <a href="#contact" class="site-header__link">Contact</a>
+      <a href="#reviews" class="site-header__link">Reviews</a>
+      <a href="#visit" class="site-header__link">Visit</a>
     </nav>
-    <a class="btn site-header__cta" href="#contact">Get a Quote</a>
+    <a class="btn site-header__cta" href="tel:{{ store.phone | tel }}">Call to Order</a>
   </div>
 </header>

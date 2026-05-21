@@ -4,7 +4,7 @@
   {% set canonical = canonicalBase + page.url %}
 {% endif %}
 {% if title %}
-  {% set metaTitle = title + ' | Custom Countertop Fabrication & Installation' %}
+  {% set metaTitle = title + ' | ' + store.name %}
 {% else %}
   {% set metaTitle = store.name + ' | ' + store.tagline %}
 {% endif %}
@@ -18,25 +18,25 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.google.com https://*.googleapis.com; style-src 'self' 'sha256-wO/9G9QwFCLgKufbWAKu/mazN/ZUlpBpfmjJD2COokE=' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com https://*.ggpht.com https://*.google.com; connect-src 'self' https://*.googleapis.com https://*.google.com; frame-src https://*.google.com https://*.googleapis.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://*.google.com https://*.googleapis.com; style-src 'self' 'sha256-EWvfZTYeNONfvk56mW1+WNBzKwBS7UOSGAEluPPqBCM=' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com https://*.ggpht.com https://*.google.com; connect-src 'self' https://*.googleapis.com https://*.google.com; frame-src https://*.google.com https://*.googleapis.com;">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>{{ metaTitle }}</title>
 <meta name="description" content="{{ metaDescription }}">
 <link rel="canonical" href="{{ canonical }}">
 <link rel="manifest" href="/manifest.webmanifest" data-vite-ignore>
-<meta name="theme-color" content="#1a2744">
+<meta name="theme-color" content="#1f1f1f">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:site_name" content="{{ store.name }}">
 <meta property="og:title" content="{{ metaTitle }}">
 <meta property="og:description" content="{{ metaDescription }}">
-<meta property="og:image" content="{{ canonicalBase }}/assets/images/logo-3d.png">
+<meta property="og:image" content="{{ canonicalBase }}/assets/images/store_front.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ metaTitle }}">
 <meta name="twitter:description" content="{{ metaDescription }}">
-<meta name="twitter:image" content="{{ canonicalBase }}/assets/images/logo-3d.png">
+<meta name="twitter:image" content="{{ canonicalBase }}/assets/images/store_front.jpg">
 
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="preconnect" href="https://www.google.com" crossorigin>
@@ -51,11 +51,11 @@
 <script type="application/ld+json">
 {{ {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": "GasStation",
   "name": store.name,
   "image": [
-    canonicalBase + "/assets/images/logo-3d.png",
-    canonicalBase + "/assets/images/marble-shower-enclosure.jpg"
+    canonicalBase + "/assets/images/store_front.jpg",
+    canonicalBase + "/assets/images/freshcut_fries_sign.jpg"
   ],
   "url": canonicalBase,
   "telephone": store.phone,

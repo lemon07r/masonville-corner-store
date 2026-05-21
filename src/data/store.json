@@ -1,11 +1,11 @@
 {
-  "name": "Astraea Fabrication",
-  "legalName": "Astraea Fabrication",
-  "siteUrl": "https://www.astraeafabrication.ca",
-  "tagline": "Premium countertop fabrication & installation.",
-  "description": "Astraea Fabrication specializes in custom countertop fabrication and installation. Granite, quartz, and marble countertops with professional installation for kitchens, bathrooms, and commercial spaces.",
+  "name": "Masonville Corner Store",
+  "legalName": "Masonville Corner Store",
+  "siteUrl": "https://www.masonvillecorner.ca",
+  "tagline": "Shelburne's best gas prices and friendly service.",
+  "description": "Stop by Masonville Corner Store for the cheapest gas in Shelburne, diesel, and propane. Friendly service, convenience items, and seasonal fresh-cut fries.",
   "phone": "+1 519-925-0522",
-  "email": "info@astraeafabrication.ca",
+  "email": "hello@masonvillecorner.store",
   "address": {
     "street": "517003 Dufferin County Rd 124",
     "city": "Shelburne",
@@ -18,33 +18,32 @@
     }
   },
   "hours": [
-    { "day": "Monday", "open": "07:00", "close": "17:00" },
-    { "day": "Tuesday", "open": "07:00", "close": "17:00" },
-    { "day": "Wednesday", "open": "07:00", "close": "17:00" },
-    { "day": "Thursday", "open": "07:00", "close": "17:00" },
-    { "day": "Friday", "open": "07:00", "close": "17:00" },
-    { "day": "Saturday", "open": "09:00", "close": "14:00" },
-    { "day": "Sunday", "open": "Closed", "close": "Closed" }
+    { "day": "Monday", "open": "06:00", "close": "20:00" },
+    { "day": "Tuesday", "open": "06:00", "close": "20:00" },
+    { "day": "Wednesday", "open": "06:00", "close": "20:00" },
+    { "day": "Thursday", "open": "06:00", "close": "20:00" },
+    { "day": "Friday", "open": "06:00", "close": "20:00" },
+    { "day": "Saturday", "open": "08:00", "close": "19:00" },
+    { "day": "Sunday", "open": "08:00", "close": "19:00" }
   ],
   "directionsUrl": "https://maps.google.com/?q=517003+Dufferin+County+Rd+124,+Shelburne,+ON+L0N+1S7",
   "reviews": {
-    "rating": 4.8,
-    "count": 42,
+    "rating": 4.1,
+    "count": 97,
     "source": "Google"
   },
   "highlights": [
-    "Locally owned and operated",
-    "Transparent pricing with free estimates",
-    "Professional fabrication and installation",
-    "Premium granite, quartz, and marble materials"
+    "Competitively priced gas, diesel, and propane",
+    "Seasonal fresh-cut fries and poutine",
+    "Locally sourced snacks and everyday essentials"
   ],
   "cta": {
     "orderPhone": "+1 519-925-0522",
-    "orderLabel": "Call Us",
+    "orderLabel": "Call Store",
     "directionsLabel": "Get Directions"
   },
   "social": {
-    "facebook": "https://www.facebook.com/astraeafabrication/",
-    "instagram": "https://www.instagram.com/astraeafabrication/"
+    "facebook": "https://www.facebook.com/pages/Masonville-Corner-Store/1776347799266016/",
+    "instagram": "https://www.instagram.com/explore/locations/1776347799266016/masonville-corner-store/"
   }
 }
