@@ -1,16 +1,16 @@
 {
-  "name": "Masonville Corner Store",
-  "short_name": "Masonville",
+  "name": "Astraea Fabrication",
+  "short_name": "Astraea",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fff9f1",
-  "theme_color": "#1f1f1f",
-  "description": "Fresh-cut fries, poutine, and neighbourhood essentials from Masonville Corner Store in Shelburne, Ontario.",
+  "background_color": "#f5f5f0",
+  "theme_color": "#1a2744",
+  "description": "Custom countertop fabrication and installation. Granite, quartz, and marble countertops for kitchens, bathrooms, and commercial spaces.",
   "icons": [
     {
-      "src": "/assets/images/store_front.jpg",
+      "src": "/assets/images/logo-3d.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }

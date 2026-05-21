@@ -1,31 +1,44 @@
-<footer class="site-footer" id="visit">
+<footer class="site-footer">
   <div class="site-footer__grid">
     <div>
-      <h2 class="site-footer__heading">Come say hi</h2>
+      <div class="site-footer__brand">
+        {% image "logo-minimal.png", "Astraea Fabrication", "80px" %}
+        <h2 class="site-footer__heading">{{ store.name }}</h2>
+      </div>
       <p>{{ store.address.street }}, {{ store.address.city }}, {{ store.address.province }} {{ store.address.postalCode }}</p>
       <p>
         <a class="site-footer__link" href="tel:{{ store.phone | tel }}">{{ store.phone }}</a>
       </p>
+      <p>
+        <a class="site-footer__link" href="mailto:{{ store.email }}">{{ store.email }}</a>
+      </p>
       <a class="btn" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">Open in Maps</a>
     </div>
     <div>
-      <h3 class="site-footer__subheading">Store Hours</h3>
+      <h3 class="site-footer__subheading">Business Hours</h3>
       <dl class="hours-table">
         {% for entry in store.hours %}
         <div class="hours-table__row" data-day="{{ entry.day }}">
           <dt>{{ entry.day }}</dt>
-          <dd>{{ entry.open }} – {{ entry.close }}</dd>
+          <dd>{% if entry.open == "Closed" %}Closed{% else %}{{ entry.open }} – {{ entry.close }}{% endif %}</dd>
         </div>
         {% endfor %}
       </dl>
     </div>
     <div>
-      <h3 class="site-footer__subheading">Follow us</h3>
+      <h3 class="site-footer__subheading">Follow Us</h3>
       <div class="site-footer__social">
         <a href="{{ store.social.facebook }}" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
         <a href="{{ store.social.instagram }}" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
       </div>
+      <h3 class="site-footer__subheading mt-2">Our Services</h3>
+      <ul class="site-footer__services">
+        <li>Kitchen Countertops</li>
+        <li>Bathroom Vanities</li>
+        <li>Shower Enclosures</li>
+        <li>Commercial Installations</li>
+      </ul>
     </div>
   </div>
-  <p class="site-footer__legal">© {{ currentYear }} {{ store.legalName }}. Built for the Masonville community.</p>
+  <p class="site-footer__legal">&copy; {{ currentYear }} {{ store.legalName }}. Crafted with precision in Shelburne, Ontario.</p>
 </footer>

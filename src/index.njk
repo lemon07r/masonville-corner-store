@@ -1,63 +1,82 @@
 ---
 layout: base.njk
-title: Masonville Corner Store
-description: Cheapest gas in Shelburne, diesel, propane, and friendly neighbourhood service at Masonville Corner Store.
+title: Astraea Fabrication
+description: Custom countertop fabrication and installation. Granite, quartz, and marble countertops for kitchens, bathrooms, and commercial spaces in Shelburne and surrounding areas.
 ---
 
 <section class="hero" id="hero">
   <div class="hero__content">
-    <span class="pill">Open Daily for Fuel & Essentials</span>
-    <h1 class="hero__headline">High Quality Fuel, Unbeatable Prices</h1>
-    <p class="hero__copy">Your family-run stop for gas, diesel, propane, and everyday essentials. Masonville Corner Store keeps Shelburne moving with friendly service and the best prices in town.</p>
+    <span class="pill">Premium fabrication & installation</span>
+    <h1 class="hero__headline">Custom Countertops Built to Last</h1>
+    <p class="hero__copy">We specialize in custom countertop fabrication and installation with a commitment to quality and customer satisfaction. From granite to quartz to marble, we bring your vision to life.</p>
     <div class="hero__ctas">
-      <a class="btn" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">{{ store.cta.directionsLabel }}</a>
-      <a class="btn btn--ghost" href="tel:{{ store.cta.orderPhone | tel }}">Check Hours</a>
+      <a class="btn" href="#contact">Get a Free Quote</a>
+      <a class="btn btn--ghost" href="#services">View Services</a>
+    </div>
+    <div class="hero__tags">
+      <span class="hero__tag">Locally Owned</span>
+      <span class="hero__tag">Transparent Pricing</span>
+      <span class="hero__tag">Professional Installation</span>
+      <span class="hero__tag">Free Estimates</span>
     </div>
   </div>
   <div class="hero__media">
-    {% image "store_front.jpg", "Masonville Corner Store gas pumps", "(min-width: 960px) 400px, 85vw", "eager", "high" %}
+    <div class="hero__image-wrapper">
+      {% image "kitchen-countertop-install.jpg", "Custom marble kitchen countertop installation by Astraea Fabrication", "(min-width: 960px) 500px, 85vw", "eager", "high" %}
+    </div>
+    <div class="hero__info-cards">
+      <div class="info-card info-card--why">
+        <span class="info-card__label">Why Homeowners Choose Us</span>
+        <ul class="info-card__list">
+          <li>Clean Installs</li>
+          <li>Strong Materials</li>
+          <li>Honest Work</li>
+        </ul>
+      </div>
+      <div class="info-card info-card--booking">
+        <span class="info-card__label">Now Booking</span>
+        <ul class="info-card__list">
+          <li>Kitchens</li>
+          <li>Bathrooms</li>
+          <li>Vanities</li>
+          <li>And more</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="section services" id="services">
   <header class="section__header">
-    <span class="pill">Full Service</span>
-    <h2>Fuel up and get back on the road</h2>
-    <p>We pride ourselves on offering the most competitive fuel prices in Shelburne, along with all the automotive essentials.</p>
+    <span class="pill">Services</span>
+    <h2>Quality work from fabrication to final install</h2>
+    <p>We specialize in custom countertop fabrication and installation with a commitment to quality and customer satisfaction.</p>
   </header>
-  <div class="grid grid--cols-3 services__grid animate-grid">
+  <div class="grid grid--cols-4 services__grid animate-grid">
     <article class="service-card">
-      <h3>Regular & Premium Gas</h3>
-      <p>High-quality fuel for every vehicle type at prices that help you save on every tank.</p>
+      <h3>Granite</h3>
+      <p>Durable and elegant granite countertops in a variety of colors and patterns.</p>
     </article>
     <article class="service-card">
-      <h3>Clear Diesel</h3>
-      <p>Reliable diesel fuel for trucks and heavy equipment, always available.</p>
+      <h3>Quartz</h3>
+      <p>Low-maintenance quartz surfaces that combine beauty with practicality.</p>
     </article>
     <article class="service-card">
-      <h3>Auto Propane</h3>
-      <p>Full-service propane fills for your vehicle or tank exchange for your BBQ.</p>
+      <h3>Marble</h3>
+      <p>Luxurious marble countertops for a timeless, sophisticated look.</p>
     </article>
     <article class="service-card">
-      <h3>Convenience Store</h3>
-      <p>Snacks, drinks, lotto, and last-minute grocery items to keep you stocked up.</p>
-    </article>
-    <article class="service-card">
-      <h3>Firewood & Ice</h3>
-      <p>Camping or hosting? Grab bags of ice and bundles of firewood on your way through.</p>
-    </article>
-    <article class="service-card">
-      <h3>Clean Restrooms</h3>
-      <p>A tidy, well-maintained stop for you and your family during your road trip.</p>
+      <h3>Edge Profiles</h3>
+      <p>Multiple edge profile options to match your design preferences.</p>
     </article>
   </div>
 </section>
 
-<section class="section highlights" id="menu">
+<section class="section highlights" id="materials">
   <header class="section__header">
-    <span class="pill">Seasonal Favorites</span>
-    <h2>Famous Fresh-Cut Fries</h2>
-    <p>When the weather is good, our chip truck serves up the best poutine in the county. <span class="seasonal-tag">Available seasonally.</span></p>
+    <span class="pill">Our Materials</span>
+    <h2>Premium Stone, Expert Craftsmanship</h2>
+    <p>Every project starts with hand-selected stone and ends with precision installation.</p>
   </header>
   <div class="highlights__grid animate-grid">
     {% for item in menu.featured %}
@@ -72,18 +91,42 @@ description: Cheapest gas in Shelburne, diesel, propane, and friendly neighbourh
     </article>
     {% endfor %}
   </div>
-  <div class="text-center mt-4">
-    <p class="text-small"><em>Chip truck hours vary by season and weather. Call ahead to confirm availability.</em></p>
+</section>
+
+<section class="section gallery" id="work">
+  <header class="section__header">
+    <span class="pill">Gallery</span>
+    <h2>Our Work</h2>
+  </header>
+  <div class="gallery__grid animate-grid">
+    <div class="gallery__item">
+      {% image "kitchen-countertop-install.jpg", "Kitchen countertop installation with marble surface and wine fridge", "(min-width: 720px) 33vw, 85vw" %}
+    </div>
+    <div class="gallery__item">
+      {% image "marble-shower-enclosure.jpg", "Custom marble shower enclosure installation", "(min-width: 720px) 33vw, 85vw" %}
+    </div>
+    <div class="gallery__item">
+      {% image "countertop-quartz-kitchen.jpg", "Blue quartz kitchen countertop with stainless steel sink", "(min-width: 720px) 33vw, 85vw" %}
+    </div>
+    <div class="gallery__item">
+      {% image "commercial-bar-counter.jpg", "Commercial bar counter with LED lighting installation", "(min-width: 720px) 33vw, 85vw" %}
+    </div>
+    <div class="gallery__item">
+      {% image "luxury-commercial-install.jpg", "Luxury commercial space with marble and gold accents", "(min-width: 720px) 33vw, 85vw" %}
+    </div>
+    <div class="gallery__item gallery__item--placeholder">
+      <p>More projects coming soon</p>
+    </div>
   </div>
 </section>
 
 <section class="section story" id="story">
   <div class="story__inner">
     <div class="story__copy">
-      <span class="pill">Our story</span>
-      <h2>Local roots. Loyal neighbours. Best Value.</h2>
-      <p>What started as a small-town general store has evolved into Shelburne's go-to spot for fair fuel prices and friendly faces. We believe that filling up your tank shouldn't empty your wallet.</p>
-      <p>We're more than just a gas station; we're a community hub where regulars are greeted by name. Whether you're a local resident or just passing through Dufferin County, we treat you like family.</p>
+      <span class="pill">About us</span>
+      <h2>Built on Craftsmanship. Driven by Quality.</h2>
+      <p>Astraea Fabrication is a locally owned and operated countertop fabrication company serving Shelburne and the surrounding Dufferin County area. We take pride in delivering exceptional stone work from initial measurement to final installation.</p>
+      <p>Whether it's a kitchen renovation, a bathroom upgrade, or a full commercial build-out, we bring the same level of care and precision to every project.</p>
       <ul class="story__highlights">
         {% for highlight in store.highlights %}
         <li>{{ highlight }}</li>
@@ -91,15 +134,15 @@ description: Cheapest gas in Shelburne, diesel, propane, and friendly neighbourh
       </ul>
     </div>
     <div class="story__media">
-      {% image "foodstand-4.jpg", "Masonville Corner Store chip truck", "(min-width: 960px) 400px, 85vw" %}
+      {% image "logo-3d.png", "Astraea Fabrication logo", "(min-width: 960px) 400px, 85vw" %}
     </div>
   </div>
 </section>
 
 <section class="section reviews" id="reviews">
   <header class="section__header">
-    <span class="pill">Neighbour approved</span>
-    <h2>See why drivers choose Masonville</h2>
+    <span class="pill">Testimonials</span>
+    <h2>What our clients say</h2>
   </header>
   <div class="reviews__grid animate-grid">
     {% from "review-card.njk" import reviewCard %}
@@ -109,19 +152,54 @@ description: Cheapest gas in Shelburne, diesel, propane, and friendly neighbourh
   </div>
 </section>
 
+<section class="section contact" id="contact" aria-labelledby="contact-heading">
+  <div class="contact__grid">
+    <div class="contact__info">
+      <span class="pill">Contact</span>
+      <h2 id="contact-heading">Get Your Free Quote</h2>
+      <p>Ready to transform your space? Reach out for a free estimate. We'll work with you to find the perfect stone and design for your project.</p>
+      <div class="contact__details">
+        <p><strong>Phone:</strong> <a href="tel:{{ store.phone | tel }}">{{ store.phone }}</a></p>
+        <p><strong>Email:</strong> <a href="mailto:{{ store.email }}">{{ store.email }}</a></p>
+        <p><strong>Address:</strong> {{ store.address.street }}, {{ store.address.city }}, {{ store.address.province }} {{ store.address.postalCode }}</p>
+      </div>
+      <a class="btn" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">Get Directions</a>
+    </div>
+    <div class="contact__form-wrapper">
+      <form class="quote-form" action="#" method="POST" novalidate>
+        <div class="quote-form__row">
+          <div class="quote-form__field">
+            <input type="text" name="name" placeholder="Name" required aria-label="Your name">
+          </div>
+          <div class="quote-form__field">
+            <input type="tel" name="phone" placeholder="Phone" aria-label="Your phone number">
+          </div>
+        </div>
+        <div class="quote-form__field">
+          <input type="email" name="email" placeholder="Email" required aria-label="Your email">
+        </div>
+        <div class="quote-form__field">
+          <textarea name="message" placeholder="Tell us about your project" rows="5" aria-label="Project details"></textarea>
+        </div>
+        <button class="btn quote-form__submit" type="submit">Send Request</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="section visit" aria-labelledby="visit-heading">
   <div class="visit__grid">
     <div>
-      <span class="pill">Plan your visit</span>
-      <h2 id="visit-heading">Easy Access, Plenty of Parking</h2>
-      <p>Find us just off Dufferin County Road 124. Large lot suitable for trucks and trailers. Swing by for the cheapest gas and a quick refresh.</p>
+      <span class="pill">Visit us</span>
+      <h2 id="visit-heading">Come See Our Showroom</h2>
+      <p>Visit our shop to browse stone samples, discuss your project in person, and see our craftsmanship up close.</p>
       <div class="visit__cta">
         <a class="btn" href="{{ store.directionsUrl }}" target="_blank" rel="noopener">Get Directions</a>
         <a class="btn btn--ghost" href="tel:{{ store.cta.orderPhone | tel }}">Call {{ store.phone }}</a>
       </div>
     </div>
     <div class="visit__map">
-      <iframe title="Map showing Masonville Corner Store" src="https://www.google.com/maps?&amp;q={{ store.address.street | urlencode }}+{{ store.address.city | urlencode }}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Map showing Astraea Fabrication" src="https://www.google.com/maps?&amp;q={{ store.address.street | urlencode }}+{{ store.address.city | urlencode }}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>

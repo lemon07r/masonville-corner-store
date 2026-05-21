@@ -1,16 +1,14 @@
 import "@styles/main.css";
 
-// Mark JS as enabled
 document.documentElement.dataset.js = "true";
 
-// Defer non-critical work
 if ("requestIdleCallback" in window) {
   requestIdleCallback(initNonCritical, { timeout: 2000 });
 } else {
   setTimeout(initNonCritical, 1);
 }
 
-// Critical: Header scroll effect (minimize reflow)
+// Header scroll effect
 const header = document.querySelector<HTMLElement>(".site-header");
 if (header) {
   let ticking = false;
@@ -27,7 +25,25 @@ if (header) {
   window.addEventListener("scroll", toggleShadow, { passive: true });
 }
 
-// Critical: Intersection observer for animations
+// Mobile menu toggle
+const menuToggle = document.querySelector<HTMLButtonElement>(".site-header__toggle");
+const nav = document.querySelector<HTMLElement>(".site-header__nav");
+if (menuToggle && nav) {
+  menuToggle.addEventListener("click", () => {
+    const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!expanded));
+    nav.classList.toggle("is-open");
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuToggle.setAttribute("aria-expanded", "false");
+      nav.classList.remove("is-open");
+    });
+  });
+}
+
+// Intersection observer for animations
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (!reduceMotion && "IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
@@ -47,7 +63,6 @@ if (!reduceMotion && "IntersectionObserver" in window) {
     .forEach((section) => observer.observe(section));
 }
 
-// Non-critical features
 function initNonCritical() {
   // Highlight current day in hours table
   const hoursRows = document.querySelectorAll<HTMLElement>(".hours-table__row");
@@ -60,15 +75,15 @@ function initNonCritical() {
     });
   }
 
-  // Newsletter form handler
-  const newsletter = document.querySelector<HTMLFormElement>(".newsletter");
-  if (newsletter) {
-    newsletter.addEventListener("submit", (event) => {
+  // Quote form handler
+  const quoteForm = document.querySelector<HTMLFormElement>(".quote-form");
+  if (quoteForm) {
+    quoteForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const status = document.createElement("p");
-      status.className = "newsletter__status";
-      status.textContent = "Thanks! We'll be in touch with fry specials soon.";
-      newsletter.replaceChildren(status);
+      status.className = "quote-form__status";
+      status.textContent = "Thank you! We'll be in touch shortly with your free quote.";
+      quoteForm.replaceChildren(status);
     });
   }
 }

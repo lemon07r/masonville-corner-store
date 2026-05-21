@@ -1,28 +1,27 @@
 {
   "featured": [
     {
-      "name": "Fresh-Cut Fries",
-      "description": "Premium fries made from locally sourced Ontario potatoes, cooked to crispy, golden perfection.",
-      "price": "5.50",
-      "image": "freshcut_fries_sign.jpg"
+      "name": "Granite Countertops",
+      "description": "Durable and elegant granite countertops in a wide variety of colors and patterns to complement any design.",
+      "image": "edge-profiles.jpg"
     },
     {
-      "name": "Classic Poutine",
-      "description": "Golden fries loaded with squeaky cheese curds and rich brown gravy.",
-      "price": "9.75",
-      "image": "poutine.jpg"
+      "name": "Quartz Surfaces",
+      "description": "Low-maintenance engineered quartz surfaces that combine lasting beauty with everyday practicality.",
+      "image": "countertop-quartz-kitchen.jpg"
     },
     {
-      "name": "Peameal Bacon on a Bun",
-      "description": "Signature sandwich piled high with Ontario peameal bacon and maple mustard.",
-      "price": "8.25",
-      "image": "foodstand-3.jpg"
+      "name": "Marble Installations",
+      "description": "Luxurious marble countertops and shower enclosures for a timeless, sophisticated aesthetic.",
+      "image": "marble-shower-enclosure.jpg"
     }
   ],
-  "staples": [
-    "Daily hot specials",
-    "Breakfast sandwiches",
-    "Fresh coffee & tea",
-    "Local baked goods"
+  "services": [
+    "Kitchen countertops",
+    "Bathroom vanities",
+    "Shower enclosures",
+    "Commercial installations",
+    "Edge profiling",
+    "Custom fabrication"
   ]
 }
